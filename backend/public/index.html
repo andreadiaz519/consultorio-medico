@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Consultorio Médico</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-100 to-sky-100 min-h-screen">
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-sky-600 to-cyan-600 text-white shadow">
+    <div class="max-w-7xl mx-auto px-6 py-6">
+      <h1 class="text-3xl font-bold">🩺 Consultorio Médico</h1>
+      <p class="text-sky-100 text-sm">
+        Gestión segura de historias clínicas
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-7xl mx-auto px-6 py-10">
+
+    <!-- ACCIONES -->
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-2xl font-semibold text-slate-700">
+        Pacientes
+      </h2>
+
+      <button
+        id="openForm"
+        class="bg-emerald-600 hover:bg-emerald-700
+               text-white px-6 py-3 rounded-xl shadow-lg
+               transition transform hover:-translate-y-0.5">
+        ➕ Nuevo paciente
+      </button>
+    </div>
+
+    <!-- FORMULARIO -->
+    <section
+      id="formSection"
+      class="hidden bg-white rounded-3xl shadow-xl p-8 mb-10
+             border border-slate-300">
+
+      <h3 class="text-xl font-semibold text-sky-700 mb-6">
+        🧾 Registro de paciente
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- NOMBRE LARGO -->
+        <div class="md:col-span-2">
+          <label class="form-label">Nombre completo</label>
+          <input id="nombre" type="text"
+            placeholder="Ej: María Fernanda López Rodríguez"
+            class="form-input">
+        </div>
+
+        <div>
+          <label class="form-label">Tipo de documento</label>
+          <input id="tipoDocumento" type="text"
+            placeholder="CC, TI, CE..."
+            class="form-input">
+        </div>
+
+        <div>
+          <label class="form-label">Número de documento</label>
+          <input id="documento" type="text"
+            placeholder="Ej: 1023456789"
+            class="form-input">
+        </div>
+
+        <div>
+          <label class="form-label">Teléfono</label>
+          <input id="telefono" type="text"
+            placeholder="Ej: 3001234567"
+            class="form-input">
+        </div>
+
+        <div>
+          <label class="form-label">Edad</label>
+          <input id="edad" type="number"
+            placeholder="Ej: 35"
+            class="form-input">
+        </div>
+
+        <!-- DIAGNÓSTICO PEQUEÑO -->
+        <div class="md:col-span-2">
+          <label class="form-label">Diagnóstico</label>
+          <input id="diagnostico" type="text"
+            placeholder="Ej: Faringitis, Control, Dolor lumbar"
+            class="form-input">
+        </div>
+
+      </div>
+
+      <div class="flex gap-4 mt-10">
+        <button
+          id="savePatient"
+          class="bg-sky-600 hover:bg-sky-700
+                 text-white px-8 py-3 rounded-xl shadow">
+          💾 Guardar
+        </button>
+
+        <button
+          id="cancel"
+          class="bg-slate-300 hover:bg-slate-400
+                 px-8 py-3 rounded-xl">
+          Cancelar
+        </button>
+      </div>
+    </section>
+
+    <!-- TABLA -->
+    <section class="bg-white rounded-3xl shadow-xl p-8 border border-slate-300">
+
+      <h3 class="text-xl font-semibold text-sky-700 mb-4">
+        📋 Pacientes registrados
+      </h3>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-200 text-slate-700">
+              <th class="p-4 text-left">Nombre</th>
+              <th class="p-4 text-center">Documento</th>
+              <th class="p-4 text-center">Teléfono</th>
+              <th class="p-4 text-center">Edad</th>
+              <th class="p-4 text-left">Diagnóstico</th>
+              <th class="p-4 text-center">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="patientsList"></tbody>
+        </table>
+      </div>
+
+      <div
+        id="emptyState"
+        class="hidden text-center py-12 text-slate-500">
+        🩺 Aún no hay pacientes registrados  
+        <p class="text-sm mt-1">Empieza agregando uno nuevo</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- TOAST -->
+  <div
+    id="toast"
+    class="fixed top-5 right-5 hidden z-50
+           max-w-sm rounded-2xl shadow-lg
+           px-4 py-3 text-sm text-white">
+  </div>
+
+  <!-- ESTILOS -->
+  <style>
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    .form-input {
+      width: 100%;
+      background-color: #e5e7eb;   /* gris visible */
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 10px 14px;          /* MENOS GRUESO */
+      font-size: 0.9rem;
+      color: #1e293b;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #0ea5e9;
+      box-shadow: 0 0 0 2px rgba(14,165,233,0.35);
+      background-color: #f1f5f9;
+    }
+  </style>
+
+  <script src="script.js"></script>
+</body>
+</html>

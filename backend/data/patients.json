@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1769726208483,
+    "nombre": "BEATRIZ ANDREA DIAZ",
+    "tipoDocumento": "CC",
+    "documento": "1097390823",
+    "telefono": "3216278163",
+    "edad": 38,
+    "diagnostico": "HTA - MIGRAÑA SEVERA"
+  },
+  {
+    "id": 1769726335566,
+    "nombre": "ANGELICA RAMIREZ",
+    "tipoDocumento": "CC",
+    "documento": "41958569",
+    "telefono": "2145585211",
+    "edad": 35,
+    "diagnostico": "FARINGITIS"
+  },
+  {
+    "id": 1769811697935,
+    "nombre": "SARA SAENZ DIAZ",
+    "tipoDocumento": "TI",
+    "documento": "1092857438",
+    "telefono": "3125784465",
+    "edad": 12,
+    "diagnostico": "ALERGIAS"
+  }
+]

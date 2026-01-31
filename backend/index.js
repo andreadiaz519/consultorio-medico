@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/users", usersRoutes);
 app.use("/patients", patientsRoutes);
 
-/* SIEMPRE al final */
+
 app.use(errorMiddleware);
 
 const PORT = process.env.PORT || 3000;

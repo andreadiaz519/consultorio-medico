@@ -1,6 +1,6 @@
 const patientsModel = require("../models/patientsModel");
 
-/* GET /patients */
+/* GET patients */
 exports.getAll = (req, res, next) => {
   try {
     const patients = patientsModel.getAll();
@@ -10,7 +10,7 @@ exports.getAll = (req, res, next) => {
   }
 };
 
-/* POST /patients */
+/* POST patients */
 exports.create = (req, res, next) => {
   try {
     const newPatient = patientsModel.create(req.body);
@@ -20,7 +20,7 @@ exports.create = (req, res, next) => {
   }
 };
 
-/* PUT /patients/:id */
+/* PUT patients/:id */
 exports.update = (req, res, next) => {
   try {
     const { id } = req.params;
@@ -31,7 +31,7 @@ exports.update = (req, res, next) => {
   }
 };
 
-/* DELETE /patients/:id */
+/* DELETE patients/:id */
 exports.remove = (req, res, next) => {
   try {
     const { id } = req.params;

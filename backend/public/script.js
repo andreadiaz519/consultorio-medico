@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/patients";
+const API = "/patients";
 
 let editId = null;
 let isSaving = false;

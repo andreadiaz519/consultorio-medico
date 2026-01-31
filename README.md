@@ -1,23 +1,16 @@
 Consultorio Médico – API REST
-Descripción del proyecto
 
-Este proyecto consiste en el desarrollo de una API REST para la gestión de pacientes de un consultorio médico.
-La API fue construida utilizando Node.js y Express, permitiendo realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre los pacientes.
+Este proyecto consiste en el desarrollo de una API REST para la gestión de pacientes de un consultorio médico. La API fue construida utilizando Node.js y Express, permitiendo realizar operaciones CRUD (crear, consultar, actualizar y eliminar) sobre los pacientes.
 
-El proyecto está enfocado principalmente en el backend, y todas las funcionalidades fueron probadas con Postman.
-Adicionalmente, se incluye un frontend básico servido de forma estática para comprobar la conexión con la API.
+El proyecto está enfocado principalmente en el backend y todas sus funcionalidades fueron probadas utilizando Postman. Adicionalmente, se incluye un frontend básico servido de forma estática desde Express para comprobar la correcta comunicación entre el frontend y la API.
 
-*Tecnologías utilizadas
+Tecnologías utilizadas: Node.js, Express.js, JavaScript, Postman para pruebas de la API y HTML para el frontend básico.
 
--Node.js
--Express.js
--JavaScript
--Postman (para pruebas de la API)
--HTML (frontend básico)
+Para ejecutar el proyecto en entorno local, se deben instalar primero las dependencias ejecutando el comando npm install desde la raíz del proyecto. Una vez finalizada la instalación, el servidor se inicia con el comando npm run dev. El servidor se ejecuta en el puerto 3000 y puede ser accedido desde el navegador o desde herramientas como Postman a través de la dirección http://localhost:3000. El frontend básico puede visualizarse desde esta misma URL.
 
-Para ejecutar el proyecto, es necesario instalar primero las dependencias utilizando el comando npm install y luego iniciar el servidor con npm run dev. El servidor se ejecuta en el puerto 3000 y puede ser accedido desde el computador o desde herramientas de prueba como Postman a través de la dirección http://localhost:3000
-El frontend básico puede visualizarse accediendo directamente a esta misma URL desde el computador.
+La API cuenta con endpoints para la gestión de pacientes: POST /patients para crear un paciente, GET /patients para listar los pacientes registrados, PUT /patients/:id para actualizar un paciente existente y DELETE /patients/:id para eliminar un paciente por su identificador. Todos los endpoints retornan respuestas en formato JSON y utilizan códigos de estado HTTP adecuados como 200, 201, 400 y 404.
 
-La API cuenta con endpoints para la gestión de pacientes. Se tiene un endpoint POST /patients para crear un nuevo paciente enviando los datos en formato JSON, un endpoint GET /patients para listar todos los pacientes registrados, un endpoint PUT /patients/:id para actualizar la información de un paciente existente y un endpoint DELETE /patients/:id para eliminar un paciente por su identificador. Todos los endpoints retornan respuestas en formato JSON y utilizan códigos de estado HTTP adecuados como 200, 201, 400 y 404 según el resultado.
+La documentación y pruebas de la API fueron realizadas utilizando Postman. La colección de la API puede ser consultada desde la documentación oficial de Postman en: https://documenter.getpostman.com/
+.
 
-Todas las funcionalidades de la API fueron probadas utilizando Postman, verificando el correcto funcionamiento de cada operación del CRUD, la correcta recepción y validación de datos, el manejo de errores y la estabilidad del servidor. La aplicación implementa un middleware de manejo de errores que permite responder de forma clara ante situaciones como datos incompletos, no encontrados o errores internos del servidor, devolviendo mensajes comprensibles para quien mire el proyecto.
+Todas las funcionalidades fueron validadas, incluyendo el manejo de errores mediante un middleware que permite responder de forma clara ante datos incompletos, recursos no encontrados o errores internos del servidor.
